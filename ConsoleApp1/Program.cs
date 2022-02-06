@@ -1,0 +1,53 @@
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System;
+using System.Collections;
+using System.Collections.Generic;
+
+//Дано координати трьох вершин трикутника (x1, y1), (x2, y2) та(x3, y3).
+//Використовуючи формулу обчислення відстані між двома точками на площині знайти
+//його периметр та площу.
+//Вхідні дані: x1 = 0, y1 = 0, x2 = 0, y2 = 3, x3 = 4, y3 = 0.
+//Вихідні дані: P = 12, S = 6.
+
+namespace ConsoleApp1
+{
+  
+class Program
+{
+    public static void Main(string[] args)
+    {
+            Console.WriteLine("Enter x1:   ");
+            var x1 = Decimal.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter y2:   ");
+            var y1 = Decimal.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter x2:   ");
+            var x2 = Decimal.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter y2:   ");
+            var y2 = Decimal.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter x3:   ");
+            var x3 = Decimal.Parse(Console.ReadLine());
+
+            Console.WriteLine("Enter y3:   ");
+            var y3 = Decimal.Parse(Console.ReadLine());
+
+          var side1 = Math.Sqrt(Math.Pow((double)(x2 - x1),2) + Math.Pow((double)(y2 - y1), 2)); 
+          var side2 = Math.Sqrt(Math.Pow((double)(x3 - x2),2) + Math.Pow((double)(y3 - y2), 2)); 
+          var side3 = Math.Sqrt(Math.Pow((double)(x1 - x3),2) + Math.Pow((double)(y1 - y3), 2));
+
+            var perimeter = side1 + side2 + side3;
+            var pivperimeter = (side1 + side2 + side3) / 2;
+
+            var s = Math.Sqrt(pivperimeter * (pivperimeter - side1) *(pivperimeter - side2) * (pivperimeter - side3));
+            Console.WriteLine($"Площа: {s}\n Периметер: {perimeter}\n ") ;  
+
+
+        }
+}
+
+}
